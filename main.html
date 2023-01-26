@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<title>Calorie Calculator</title>
+<head>
+    <link href="style.css" rel="stylesheet">
+    <script src = "main.js"></script>
+</head>
+<body onload="display();updateCal();">
+<div class="main">
+    <center>
+    <h1>Calorie Calculator</h1>
+    <div>Tell us what you eat for the day! You should be intake <b><span id="r1111"></span>  Calories </b>of food! </div>
+    </center>
+<script>
+    document.getElementById("r1111").innerHTML = Math.trunc(localStorage.getItem("value"));
+</script>
+
+</div>
+<div>
+<div class="tabs">
+        <div class="tabs__sidebar">
+            <button class="tabs__button tabs__button--active" data-for-tab = "1" onclick="toVeg()"> Vegetables </button>
+            <button class="tabs__button" data-for-tab = "2" onclick="toFruit()"> Fruits </button>
+            <button class="tabs__button" data-for-tab = "3" onclick="toGrain()"> Grains  </button>
+            <button class="tabs__button" data-for-tab = "4" onclick="toMeat()"> Meat  </button>
+        </div>
+    </div>
+
+    <script>
+        function setUpTab () {
+            document.querySelectorAll(".tabs__button").forEach(button => {
+                button.addEventListener("click", () => {
+                    const sideBar = button.parentElement;
+                    const tabContainer = sideBar.parentElement;
+                    const tabNumber = button.dataset.forTab;
+                    const tabsToActivate = tabContainer.querySelector('.tab__content[data-tab= "${tabNumber}"]');
+
+                    sideBar.querySelectorAll(".tabs__button").forEach(button => {
+                        button.classList.remove("tabs__button--active");
+                    });
+                    
+                    tabContainer.querySelectorAll(".tabs__content").forEach(tab => {
+                        tab.classList.remove("tabs__content--active");
+                    });
+
+                    button.classList.add("tabs__button--active");
+                    tabsToActivate.classList.add("tabs__content--active");
+                });
+            });
+        } 
+
+    document.addEventListener("DOMContentLoaded", () => {
+        setUpTab();
+    })
+    </script>
+<div class="food list">
+    <p id = "name1"></p>
+    <br>
+    <img src="" alt="" width ="300" height= "200" id = "img1">
+    <br>
+    <br>
+        <label>Quantity :</label>
+        <select id = "quant1">
+            <option value = "0">0</option>
+            <option value = "1">1</option>
+            <option value = "2">2</option>
+            <option value = "3">3</option>
+            <option value = "4">4</option>
+            <option value = "5">5</option>
+            <option value = "6">6</option>
+            <option value = "7">7</option>
+            <option value = "8">8</option>
+            <option value = "9">9</option>
+            <option value = "10">10</option>
+        </select>
+        <button type="button" onclick="addCalories0()">Add</button>
+</div>
+
+<div class="food list">
+    <p id = "name2"></p>
+    <br>
+    <img src="" alt="" width ="300" height= "200" id = "img2">
+    <br>
+    <br>
+        <label>Quantity :</label>
+        <select id = "quant2">
+            <option value = "0">0</option>
+            <option value = "1">1</option>
+            <option value = "2">2</option>
+            <option value = "3">3</option>
+            <option value = "4">4</option>
+            <option value = "5">5</option>
+            <option value = "6">6</option>
+            <option value = "7">7</option>
+            <option value = "8">8</option>
+            <option value = "9">9</option>
+            <option value = "10">10</option>
+        </select>
+        <button type="button" onclick="addCalories1()">Add</button>
+</div>
+
+<div class="food list">
+    <p id = "name3"></p>
+    <br>
+    <img src="" alt="" width ="300" height= "200" id = "img3">
+    <br>
+    <br>
+        <label>Quantity :</label>
+        <select id = "quant3">
+            <option value = "0">0</option>
+            <option value = "1">1</option>
+            <option value = "2">2</option>
+            <option value = "3">3</option>
+            <option value = "4">4</option>
+            <option value = "5">5</option>
+            <option value = "6">6</option>
+            <option value = "7">7</option>
+            <option value = "8">8</option>
+            <option value = "9">9</option>
+            <option value = "10">10</option>
+        </select>
+        <button type="button" onclick="addCalories2()">Add</button>
+        <br>
+      
+</div>
+<p style="position: absolute; top : 600px; left : 690px; z-index:999;">Calorie is calculated per 100 gram.</p>  
+<button type = "button" onclick="last()" style="position: absolute; top : 650px; left : 690px; z-index:999;" >last page</button>
+<button type = "button" onclick="next()" style="position: absolute; top : 650px; left : 870px; z-index:999;">next page</button>
+
+<table name = "Cal Table" style = "position: relative; top: 20px; left: 400px; ">
+    <caption>Total Calories</caption>
+    <tr>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Calories</th>
+    </tr>
+</table>
+<div id = "totalCal" style = "position: relative; top: 40px; left: 425px; display: inline-block;"></div>
+<div id = "Calorie Defficiency" style = "position: relative; top: 80px; left: 298px; display: inline-block;"></div>
+</div>
+</body>
+</html>

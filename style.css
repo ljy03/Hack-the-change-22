@@ -1,0 +1,90 @@
+.main{
+   background-color: rgb(255, 255, 255);
+}
+
+
+  
+ .column.side {
+   left: 30px;
+   top: 200px;
+   background-color:hotpink;
+   height: 220px;
+   width: 25%;
+   float: left;
+   
+ }
+  
+ .food.list {  
+   position: relative;
+   border-style:dashed;
+   border-color: rgb(241, 201, 201);
+   border-top-width: 15px;
+   border-right-width: 15px;
+   border-bottom-width: 15px;
+   border-left-width: 15px;
+   left: 300px;
+   top: 0px;
+   background-color: rgb(241, 201, 201);
+   height: 800px;
+   width: 310px;
+   float: left;
+   text-align: center;
+ }
+
+
+ .footer {
+   background-color: orange;
+   padding: 10px;
+ }
+
+
+ .tabs {
+   position: relative;
+   left: 300px;
+   border: 1px solid #ccc;
+   display: inline;
+}
+
+.tabs__sidebar {
+   width: 1020px;
+   flex-shrink: 0;   
+   background: #ccc;
+}
+
+.tabs__button {
+   padding: 10px;
+   display: block;
+   background: #eee;
+   border: none;
+   width: 100%;
+   outline: none;
+   cursor: pointer;
+}
+
+.tabs__button:active {
+   background: #dddddd;
+}
+
+.tabs__button:not(:last-of-type) {
+   border-bottom: 1px solid #cccccc;
+
+}
+
+.tabs__button--active {
+
+   font-weight: bold;
+   border-right: solid 2px green;
+   background: #dddddd;
+}
+
+.tabs__content {
+   padding: 15px;
+   font-size: 0.8 rem;
+   display: none;
+}
+
+.tabs__content--active {
+   display: block;
+}
+
+
